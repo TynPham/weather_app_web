@@ -33,7 +33,7 @@ const CurrentTime = () => {
   return (
     <div className="flex justify-between items-center text-white transition">
       <div>
-        <h3 className="-mt-2 w-max text-[2.75rem]">{time}</h3>
+        <h3 className="-mt-2 w-max text-2.75">{time}</h3>
         <p className="-mt-2 text-sm">{today}</p>
       </div>
       <Status />

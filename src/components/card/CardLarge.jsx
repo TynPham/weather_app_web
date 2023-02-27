@@ -3,7 +3,6 @@ import { listWeatherImg } from "../../data";
 import { Spinner } from "../../icon";
 import Location from "./Location";
 import WindHum from "./WindHum";
-import IMG from "../../assets/image/sun.png";
 
 const options = {
   month: "long",
@@ -24,7 +23,7 @@ const CardLarge = ({ data }) => {
         <>
           <img
             className="absolute right-0 rounded-tr-2xl"
-            src={IMG}
+            src="/assets/image/sun.png"
             alt="img"
           />
           <section className="md:min-h-430 min-h-500 relative flex flex-col items-center text-center text-white-always">
@@ -40,11 +39,11 @@ const CardLarge = ({ data }) => {
               <p className="lg:text-base text-xl font-semibold">
                 Today, <span>{handleDay(data)}</span>
               </p>
-              <span className="lg:text-7xl md:text-8xl text-7xl relative block mt-4 font-semibold">
+              <span className="lg:text-7xl md:text-8xl text-8xl relative block mt-4 font-semibold">
                 {Math.round(data.main.temp - 273)}
                 <span className="absolute -top-2">°</span>
               </span>
-              <span className="md:text-2xl text-[1.35rem] font-semibold">
+              <span className="md:text-2xl text-1.35 font-semibold">
                 {data.weather[0].main}
               </span>
               <div className="flex justify-center mt-4">

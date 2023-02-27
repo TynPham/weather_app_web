@@ -93,4 +93,10 @@ body {
   body.light-mode {
     --bg-status: #f0f5ff;
   }
+  .Toastify__toast-container {
+    width: 80vw !important;
+    margin-top: 1rem !important;
+    left: unset !important;
+    right: 0 !important;
+  }
 }

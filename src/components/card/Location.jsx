@@ -7,7 +7,7 @@ const Location = ({ name, down = true, color = "text-white" }) => {
     <>
       <CiLocationOn className={`text-2xl ${color} transition`} />
       <span className="capitalize">{name}</span>
-      {down && <GoChevronDown className="mt-[2px]" />}
+      {down && <GoChevronDown className="mt-2p" />}
     </>
   );
 };

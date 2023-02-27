@@ -11,11 +11,11 @@ const Info = () => {
   const dataWeather = useSelector((state) => state.weather);
 
   return (
-    <section className="lg:py-2 lg:px-8 lg:order-2 md:order-1 md:py-6 md:px-16 order-1 bg-info py-6 px-8 transition">
+    <section className="lg:py-2 lg:px-8 lg:order-2 md:py-6 md:px-16 order-1 bg-info py-6 px-8 transition">
       <div className="flex items-center justify-between">
         <Search />
         <div className="flex items-center">
-          <IoNotificationsOutline className="text-white text-2xl mr-4 cursor-pointer transition" />
+          <IoNotificationsOutline className="text-white text-2xl mr-4 transition cursor-pointer" />
           <img
             src={"/assets/image/Tyn.jpg"}
             alt="avatar"

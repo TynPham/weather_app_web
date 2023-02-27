@@ -17,7 +17,7 @@ const CardInfo = ({ Icon, property = "rain", result, unit = "%" }) => {
         </div>
         <div className="flex flex-col gap-1">
           <span>{title}</span>
-          <h2 className="text-blue_cf text-2xl font-medium">
+          <h2 className="text-2xl font-medium text-blue_cf">
             {result || 0} <span>{unit}</span>
           </h2>
         </div>

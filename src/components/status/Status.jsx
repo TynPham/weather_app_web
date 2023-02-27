@@ -25,17 +25,17 @@ const Status = () => {
   };
 
   return (
-    <div className="bg-status transition p-1 rounded-[3rem]">
+    <div className="bg-status p-1 rounded-3 transition">
       <button
         ref={sunRef}
-        className="sun p-2 rounded-full mr-2 transition-all duration-300 ease-in"
+        className="sun p-2 mr-2 rounded-full transition-all duration-300 ease-in"
         onClick={() => handleToggle(sunRef, moonRef)}
       >
         <BsSun />
       </button>
       <button
         ref={moonRef}
-        className="moon p-2 rounded-full activeBg transition-all duration-300 ease-in"
+        className="moon p-2 rounded-full transition-all duration-300 ease-in activeBg"
         onClick={() => handleToggle(moonRef, sunRef)}
       >
         <BsMoonStars />

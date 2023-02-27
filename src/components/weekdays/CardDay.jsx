@@ -64,13 +64,13 @@ const CardDay = () => {
         } flex flex-col justify-center items-center p-4 rounded-2xl transition`}
       >
         <img
-          className="lg:w-20 md:w-20 w-16 -mt-4"
+          className="md:w-20 w-16 -mt-4"
           src={`/assets/image/${listWeatherImg[icon]}`}
           alt=""
         />
-        <div className="flex flex-col w-min m-auto gap-2 font-medium text-sm">
-          <span className="lg:block md:block hidden">{day}</span>
-          <span className="lg:hidden md:hidden block">{day.slice(0, 3)}</span>
+        <div className="flex flex-col gap-2 font-medium text-sm w-min m-auto">
+          <span className="md:block hidden">{day}</span>
+          <span className="md:hidden block">{day.slice(0, 3)}</span>
           <span className="relative mr-1">
             {temperature}
             <span className="absolute -top-1">°C</span>

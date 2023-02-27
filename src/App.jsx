@@ -21,7 +21,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App lg:h-screen lg:px-28 lg:py-1 md:px-0 md:py-0 py-0">
+    <div className="App lg:h-screen lg:px-28 lg:py-1 px-0 py-0">
       <Home />
     </div>
   );
