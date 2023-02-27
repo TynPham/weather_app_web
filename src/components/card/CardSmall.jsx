@@ -35,7 +35,7 @@ const CardSmall = ({ name }) => {
           </div>
           <span className="absolute bottom-4 right-4 text-2xl">
             {Math.round(data.main.temp - 273)}{" "}
-            <span className="absolute -top-2">°</span>
+            <span className="absolute -top-2 -right-2">°</span>
           </span>
         </div>
       )}
