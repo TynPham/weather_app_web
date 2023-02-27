@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+:root {
+  --body-bg: linear-gradient(to top, #348ac7, #7474bf);
+  --bg-info: #2d2a54;
+  --bg-details: #313060;
+  --bg-primary: #3e3c71;
+  --bg-search: #35305f;
+  --bg-status: #3f3b71;
+  --bg-sunStatus: #2d2a54;
+  --text-color: #fff;
+}
+
+body.light-mode {
+  --body-bg: #b7c2df;
+  --bg-info: #ffffff;
+  --bg-details: #f0f5ff;
+  --bg-primary: #fff;
+  --bg-search: #f5f8ff;
+  --bg-status: #fff;
+  --bg-sunStatus: #fff8f0;
+  --text-color: #5c92ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: var(--body-bg);
+}
+
+.bar {
+  position: relative;
+}
+.bar::before {
+  position: absolute;
+  content: "";
+  top: 4px;
+  left: 4.5rem;
+  height: 70%;
+  width: 1px;
+  background: #fff;
+}
+.sun.activeBg {
+  background: #f1c40f;
+}
+.moon.activeBg {
+  background: #00a8ff;
+}
+.transition {
+  transition: all 0.3s ease-in !important;
+}
+.bg-info {
+  background-color: var(--bg-info);
+}
+.bg-details {
+  background-color: var(--bg-details);
+}
+.bg-primary {
+  background-color: var(--bg-primary);
+}
+.bg-search {
+  background-color: var(--bg-search);
+}
+.bg-status {
+  background-color: var(--bg-status) !important;
+}
+.bg-sunStatus {
+  background-color: var(--bg-sunStatus);
+}
+.text-white {
+  color: var(--text-color) !important;
+}
+.text-white-always {
+  color: #fff;
+}
+.shadow-location {
+  box-shadow: 0 0 1px var(--bg-status);
+}
+.inputField::placeholder {
+  color: var(--text-color);
+}
+.Toastify {
+  position: absolute;
+}
+
+@media screen and (max-width: 1023px) {
+  body.light-mode {
+    --bg-status: #f0f5ff;
+  }
+}
