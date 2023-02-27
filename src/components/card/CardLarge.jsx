@@ -34,7 +34,7 @@ const CardLarge = ({ data }) => {
             <div className="md:gap-0 mt-4 flex flex-col gap-2">
               <img
                 className="w-48"
-                src={`src/assets/image/${listWeatherImg[data.weather[0].icon]}`}
+                src={`/assets/image/${listWeatherImg[data.weather[0].icon]}`}
                 alt=""
               />
               <p className="lg:text-base text-xl font-semibold">

@@ -65,7 +65,7 @@ const CardDay = () => {
       >
         <img
           className="lg:w-20 md:w-20 w-16 -mt-4"
-          src={`src/assets/image/${listWeatherImg[icon]}`}
+          src={`/assets/image/${listWeatherImg[icon]}`}
           alt=""
         />
         <div className="flex flex-col w-min m-auto gap-2 font-medium text-sm">

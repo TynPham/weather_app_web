@@ -17,7 +17,7 @@ const Info = () => {
         <div className="flex items-center">
           <IoNotificationsOutline className="text-white text-2xl mr-4 cursor-pointer transition" />
           <img
-            src="src/assets/image/Tyn.jpg"
+            src={"/assets/image/Tyn.jpg"}
             alt="avatar"
             className="w-8 rounded-full cursor-pointer"
           />
