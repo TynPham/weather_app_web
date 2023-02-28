@@ -10,6 +10,11 @@ module.exports = {
       colors: {
         orange_cf: "#f39c12",
         blue_cf: "#0652DD",
+        login: "#232836",
+        login_blue: "#0171d3",
+      },
+      borderColor: {
+        input: "#CACACA",
       },
       gridTemplateColumns: {
         "7_3": "70% 30%",
@@ -24,9 +29,17 @@ module.exports = {
         pink: "linear-gradient(to right, #f953c6, #b91d73);",
         orange: "linear-gradient(to top, #f2994a, #f2c94c);",
       },
+      backgroundColor: {
+        login: "#0171d3",
+        loginHover: "##016dcb",
+        fb: "#4267b2",
+      },
       minHeight: {
         430: "430px",
         500: "500px",
+      },
+      maxWidth: {
+        430: "430px",
       },
       margin: {
         "2p": "2px",

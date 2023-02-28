@@ -55,6 +55,9 @@ body {
 .transition {
   transition: all 0.3s ease-in !important;
 }
+.bg-body {
+  background: var(--body-bg);
+}
 .bg-info {
   background-color: var(--bg-info);
 }
@@ -85,18 +88,32 @@ body {
 .inputField::placeholder {
   color: var(--text-color);
 }
-.Toastify {
+.line {
+  position: relative;
+  height: 1px;
+  width: 100%;
+  margin: 36px 0;
+  background-color: #d4d4d4;
+}
+.line::before {
+  content: "Or";
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  color: #8b8b8b;
+  padding: 0 15px;
 }
 
 @media screen and (max-width: 1023px) {
   body.light-mode {
     --bg-status: #f0f5ff;
   }
-  .Toastify__toast-container {
+  /* .Toastify__toast-container {
     width: 80vw !important;
     margin-top: 1rem !important;
     left: unset !important;
     right: 0 !important;
-  }
+  } */
 }

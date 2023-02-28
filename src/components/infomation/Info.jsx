@@ -1,11 +1,11 @@
 import React from "react";
 import Search from "../search/Search";
-import { IoNotificationsOutline } from "react-icons/io5";
 import BgCard from "../card/BgCard";
 import CardLarge from "../card/CardLarge";
 import CardSmall from "../card/CardSmall";
 import { useSelector } from "react-redux";
 import CurrentTime from "../curentTime/CurrentTime";
+import User from "./User";
 
 const Info = () => {
   const dataWeather = useSelector((state) => state.weather);
@@ -14,14 +14,7 @@ const Info = () => {
     <section className="lg:py-2 lg:px-8 lg:order-2 md:py-6 md:px-16 order-1 bg-info py-6 px-8 transition">
       <div className="flex items-center justify-between">
         <Search />
-        <div className="flex items-center">
-          <IoNotificationsOutline className="text-white text-2xl mr-4 transition cursor-pointer" />
-          <img
-            src={"/assets/image/Tyn.jpg"}
-            alt="avatar"
-            className="w-8 rounded-full cursor-pointer"
-          />
-        </div>
+        <User />
       </div>
       <div className="lg:hidden mt-4">
         <CurrentTime />

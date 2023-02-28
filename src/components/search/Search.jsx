@@ -6,7 +6,7 @@ import weatherApi from "../../api/weatherApi";
 import { setDataWeather } from "../../reduxToolkit/dataWeatherSlice";
 import { setSearchValue } from "../../reduxToolkit/SearchSlice";
 
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { createParams } from "../../data";
 
 const Search = () => {
@@ -53,7 +53,6 @@ const Search = () => {
       >
         <HiOutlineLocationMarker className="text-base text-white transition" />
       </button>
-      <ToastContainer />
     </form>
   );
 };
