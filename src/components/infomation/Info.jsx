@@ -11,7 +11,7 @@ const Info = () => {
   const dataWeather = useSelector((state) => state.weather);
 
   return (
-    <section className="lg:py-2 lg:px-8 lg:order-2 md:py-6 md:px-16 order-1 bg-info py-6 px-8 transition">
+    <section className="lg:py-2 lg:px-8 lg:order-2 md:py-6 md:px-16 order-1 bg-info py-6 px-4 transition">
       <div className="flex items-center justify-between">
         <Search />
         <User />

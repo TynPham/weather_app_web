@@ -18,6 +18,7 @@ const User = () => {
     try {
       await signOut(auth);
       localStorage.removeItem("user");
+      console.log(auth);
       navigate("/LogIn");
     } catch (error) {
       console.log(error);

@@ -85,7 +85,7 @@ const CardDay = () => {
   return (
     <div className="mt-1">
       <h2 className="capitalize">{CITY || DEFAULT_CITY} Weather Forecast</h2>
-      <div className="row flex justify-between mt-2">
+      <div className="md:flex md:justify-between mt-2 grid grid-cols-3 place-items-center gap-y-4">
         {Object.keys(groupedData).map((day) => (
           <div className="col-sm-6 col-md-4 col-lg-3" key={day}>
             {renderCard(

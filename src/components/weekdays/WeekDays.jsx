@@ -3,7 +3,7 @@ import CardDay from "./CardDay";
 
 const WeekDays = () => {
   return (
-    <div>
+    <div className="w-full">
       <CardDay />
     </div>
   );

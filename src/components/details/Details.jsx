@@ -9,7 +9,7 @@ import KeyInfo from "../keyInfo/KeyInfo";
 
 const Details = () => {
   return (
-    <section className="lg:order-1 lg:px-12 md:px-12 order-2 px-8 bg-details text-white transition">
+    <div className="lg:order-1 lg:px-12 md:px-12 order-2 px-4 bg-details text-white transition">
       <div className="lg:block md:hidden hidden">
         <CurrentTime />
       </div>
@@ -32,7 +32,7 @@ const Details = () => {
           <KeyInfo />
         </BgCard>
       </div>
-    </section>
+    </div>
   );
 };
 

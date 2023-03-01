@@ -138,7 +138,7 @@ function ChartWeather() {
     <div>
       {loading && <Spinner />}
       {hourlyData.length > 0 && (
-        <div className="p-4">
+        <div className="md:p-4 px-1 py-2">
           <Line data={data} options={options} height={300} width={600} />
         </div>
       )}

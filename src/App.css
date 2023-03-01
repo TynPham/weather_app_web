@@ -105,15 +105,13 @@ body {
   color: #8b8b8b;
   padding: 0 15px;
 }
+canvas {
+  height: 100% !important;
+  width: 100% !important;
+}
 
-@media screen and (max-width: 1023px) {
+@media only screen and (max-width: 1023px) {
   body.light-mode {
     --bg-status: #f0f5ff;
   }
-  /* .Toastify__toast-container {
-    width: 80vw !important;
-    margin-top: 1rem !important;
-    left: unset !important;
-    right: 0 !important;
-  } */
 }

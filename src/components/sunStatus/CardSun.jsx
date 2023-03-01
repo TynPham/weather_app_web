@@ -20,7 +20,7 @@ const CardSun = () => {
         </div>
         <BsThreeDotsVertical className="text-orange_cf" />
       </div>
-      <div className="lg:gap-36 md:gap-36 flex items-center gap-64">
+      <div className="lg:gap-36 md:gap-36 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <BsSun className="text-orange_cf text-3xl" />
           <div className="flex flex-col text-sm">
