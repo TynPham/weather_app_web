@@ -1,13 +1,6 @@
 import React from "react";
 
-const Field = ({
-  name,
-  setName,
-  type,
-  placeholder,
-  register,
-  errorMessage,
-}) => {
+const Field = ({ name, setName, type, placeholder, register = {}, errorMessage = "" }) => {
   return (
     <div className="relative h-12 w-full mt-5 rounded-md">
       <input
@@ -18,11 +11,7 @@ const Field = ({
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
-      {errorMessage && (
-        <span className="text-red-600 text-xs font-medium absolute top-full left-1">
-          {errorMessage}
-        </span>
-      )}
+      {errorMessage && <span className="text-red-600 text-xs font-medium absolute top-full left-1">{errorMessage}</span>}
     </div>
   );
 };

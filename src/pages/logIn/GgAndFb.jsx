@@ -1,10 +1,6 @@
 import React from "react";
 import { BsFacebook } from "react-icons/bs";
-import {
-  GoogleAuthProvider,
-  FacebookAuthProvider,
-  signInWithPopup,
-} from "firebase/auth";
+import { GoogleAuthProvider, FacebookAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../config/firebase";
 import { useNavigate } from "react-router-dom";
 import { setUserData } from "../../reduxToolkit/dataUserSlice";
@@ -19,6 +15,7 @@ const GgAndFb = () => {
     try {
       const result = await signInWithPopup(auth, provider);
       dispatch(setUserData(result.user.providerData[0]));
+      console.log(result.user.providerData[0]);
       localStorage.setItem("user", JSON.stringify(result.user.providerData[0]));
       navigate("/home");
     } catch (error) {
@@ -31,6 +28,7 @@ const GgAndFb = () => {
     try {
       const result = await signInWithPopup(auth, provider);
       dispatch(setUserData(result.user.providerData[0]));
+      console.log(result.user.providerData[0]);
       localStorage.setItem("user", JSON.stringify(result.user.providerData[0]));
       navigate("/home");
     } catch (error) {
@@ -40,10 +38,7 @@ const GgAndFb = () => {
 
   return (
     <div>
-      <span
-        onClick={handleLogInFb}
-        className="relative flex justify-center items-center h-12 w-full mt-5 text-white bg-fb rounded-md cursor-pointer"
-      >
+      <span onClick={handleLogInFb} className="relative flex justify-center items-center h-12 w-full mt-5 text-white bg-fb rounded-md cursor-pointer">
         <BsFacebook className="absolute top-1/2 -translate-y-1/2 left-4 text-2xl" />
         <span>Login with Facebook</span>
       </span>
@@ -51,14 +46,8 @@ const GgAndFb = () => {
         className="relative flex justify-center items-center h-12 w-full mt-3 border border-input rounded-md cursor-pointer"
         onClick={handleLogInGg}
       >
-        <img
-          src="/assets/image/gg.png"
-          alt="gg"
-          className="absolute top-1/2 -translate-y-1/2 left-4 w-5"
-        />
-        <span className="font-medium text-login opacity-60">
-          Login with Google
-        </span>
+        <img src="/assets/image/gg.png" alt="gg" className="absolute top-1/2 -translate-y-1/2 left-4 w-5" />
+        <span className="font-medium text-login opacity-60">Login with Google</span>
       </span>
     </div>
   );

@@ -6,6 +6,7 @@ import weatherApi from "./api/weatherApi";
 import "./App.css";
 import { createParams } from "./data";
 import Home from "./pages/Home";
+import ForgotPass from "./pages/logIn/ForgotPass";
 import LogIn from "./pages/logIn/LogIn";
 import { setDataWeather } from "./reduxToolkit/dataWeatherSlice";
 
@@ -31,8 +32,9 @@ function App() {
     <BrowserRouter>
       <div className="App lg:h-screen lg:px-28 lg:py-1 px-0 py-0">
         <Routes>
-          <Route path="/" element={<Navigate to="/LogIn" />} />
-          <Route path="/LogIn" element={<LogIn />} />
+          <Route path="/" element={<Navigate to="/logIn" />} />
+          <Route path="/logIn" element={<LogIn />} />
+          <Route path="/forgot" element={<ForgotPass />} />
           <Route path="/home" element={<Home />} />
         </Routes>
         <ToastContainer />

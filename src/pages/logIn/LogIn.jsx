@@ -8,7 +8,7 @@ import { createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailA
 import { auth } from "../../config/firebase";
 import { useDispatch } from "react-redux";
 import { setUserData } from "../../reduxToolkit/dataUserSlice";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import GgAndFb from "./GgAndFb";
 import Field from "./Field";
 import { Spinner } from "../../icon/index";
@@ -74,6 +74,7 @@ const LogIn = () => {
     try {
       setIsLoading(true);
       const result = await signInWithEmailAndPassword(auth, email, password);
+      console.log(result.user.providerData[0]);
       if (result.user.emailVerified) {
         dispatch(setUserData(result.user.providerData[0]));
         localStorage.setItem("user", JSON.stringify(result.user.providerData[0]));
@@ -106,8 +107,22 @@ const LogIn = () => {
         <div className="form-content">
           <header className="text-3xl text-login text-center font-semibold">{isLogInForm ? "Login" : "Signup"}</header>
           <form onSubmit={handleSubmit(handleSubmitForm)}>
-            <Field name={email} setName={setEmail} type="email" placeholder="Email" register={{ ...register("email") }} errorMessage={errors.email?.message} />
-            <Field name={password} setName={setPassword} type="password" placeholder="Password" register={{ ...register("password") }} errorMessage={errors.password?.message} />
+            <Field
+              name={email}
+              setName={setEmail}
+              type="email"
+              placeholder="Email"
+              register={{ ...register("email") }}
+              errorMessage={errors.email?.message}
+            />
+            <Field
+              name={password}
+              setName={setPassword}
+              type="password"
+              placeholder="Password"
+              register={{ ...register("password") }}
+              errorMessage={errors.password?.message}
+            />
             {!isLogInForm && (
               <Field
                 name={confirmPass}
@@ -120,9 +135,9 @@ const LogIn = () => {
             )}
             {isLogInForm && (
               <div className="text-center mt-2">
-                <a href="#" className="text-sm text-login_blue font-normal">
+                <Link to="/forgot" className="text-sm text-login_blue font-normal">
                   Forgot password?
-                </a>
+                </Link>
               </div>
             )}
             <div className="relative h-12 w-full mt-5 rounded-md">

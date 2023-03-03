@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { FiSun } from "react-icons/fi";
 import { WiSunrise } from "react-icons/wi";
 import { BsMoonStars } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
 const TimeOfDay = () => {
   const [timeOfDay, setTimeOfDay] = useState("");
+  const user = useSelector((state) => state.user);
 
   useEffect(() => {
     const time = new Date().getHours();
@@ -26,7 +28,7 @@ const TimeOfDay = () => {
       {timeOfDay === "Evening" && <BsMoonStars className="text-2xl" />}
       <h4 className="flex text-xl font-medium">
         Good&nbsp;
-        {timeOfDay},&nbsp;<span>Asif!</span>
+        {timeOfDay},&nbsp;<span>{user.displayName || user.email}</span>
       </h4>
     </>
   );
