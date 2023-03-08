@@ -46,7 +46,7 @@ const Search = () => {
           const params = createParams(result.data.address.city);
           const response = await weatherApi.get(params);
           dispatch(setDataWeather(response));
-          dispatch(setSearchValue(country));
+          dispatch(setSearchValue(result.data.address.city));
         } catch (error) {
           console.log(error);
         } finally {
