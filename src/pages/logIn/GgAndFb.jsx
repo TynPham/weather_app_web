@@ -15,9 +15,8 @@ const GgAndFb = () => {
     try {
       const result = await signInWithPopup(auth, provider);
       dispatch(setUserData(result.user.providerData[0]));
-      console.log(result.user.providerData[0]);
       localStorage.setItem("user", JSON.stringify(result.user.providerData[0]));
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -28,9 +27,8 @@ const GgAndFb = () => {
     try {
       const result = await signInWithPopup(auth, provider);
       dispatch(setUserData(result.user.providerData[0]));
-      console.log(result.user.providerData[0]);
       localStorage.setItem("user", JSON.stringify(result.user.providerData[0]));
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       console.log(error);
     }

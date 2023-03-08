@@ -74,18 +74,18 @@ const LogIn = () => {
     try {
       setIsLoading(true);
       const result = await signInWithEmailAndPassword(auth, email, password);
-      console.log(result.user.providerData[0]);
       if (result.user.emailVerified) {
         dispatch(setUserData(result.user.providerData[0]));
         localStorage.setItem("user", JSON.stringify(result.user.providerData[0]));
-        navigate("/home");
+        navigate("/");
       } else {
         toast.info("Please verify the email in your email!");
       }
     } catch (error) {
       toast.error("Your email or password is wrong!");
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
   };
 
   const handleSignUp = async () => {
@@ -97,8 +97,9 @@ const LogIn = () => {
       setIsLogInForm(true);
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
   };
 
   return (

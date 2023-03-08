@@ -3,8 +3,9 @@ import Field from "./Field";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../../config/firebase";
 import { Spinner } from "../../icon";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { GrFormPrevious } from "react-icons/gr";
 
 const ForgotPass = () => {
   const [email, setEmail] = useState("");
@@ -25,9 +26,15 @@ const ForgotPass = () => {
 
   return (
     <div className="flex justify-center items-center bg-body h-screen w-full px-3">
-      <div className="md:p-8 px-4 py-8 mt-8 max-w-430 w-full rounded-md bg-white">
+      <div className="md:p-8 px-4 py-8 mt-8 max-w-430 w-full rounded-md bg-white relative">
         <div>
-          <header className="text-3xl text-login text-center font-semibold">Password Recovery</header>
+          <header className="text-3xl text-login text-center font-semibold">
+            <Link className="absolute top-2 left-1 text-xs flex items-center hover:text-blue-500 transition-all" to="/login">
+              <GrFormPrevious />
+              Back
+            </Link>
+            <span>Password Recovery</span>
+          </header>
           <form onSubmit={handlePasswordRecover}>
             <Field name={email} setName={setEmail} type="email" placeholder="Email" />
             <div className="relative h-12 w-full mt-5 rounded-md">

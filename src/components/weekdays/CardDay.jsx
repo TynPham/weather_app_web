@@ -59,15 +59,9 @@ const CardDay = () => {
   const renderCard = (day, temperature, icon, isActive) => {
     return (
       <button
-        className={`${
-          isActive ? "bg-sky text-white-always" : "bg-primary"
-        } flex flex-col justify-center items-center p-4 rounded-2xl transition`}
+        className={`${isActive ? "bg-sky text-white-always" : "bg-primary"} flex flex-col justify-center items-center p-4 rounded-2xl transition`}
       >
-        <img
-          className="md:w-20 w-16 -mt-4"
-          src={`/assets/image/${listWeatherImg[icon]}`}
-          alt=""
-        />
+        <img className="md:w-20 w-16 -mt-4" src={`/assets/image/${listWeatherImg[icon]}`} alt="" />
         <div className="flex flex-col gap-2 font-medium text-sm w-min m-auto">
           <span className="md:block hidden">{day}</span>
           <span className="md:hidden block">{day.slice(0, 3)}</span>
@@ -90,10 +84,7 @@ const CardDay = () => {
           <div className="col-sm-6 col-md-4 col-lg-3" key={day}>
             {renderCard(
               day,
-              getTemperature(
-                groupedData[day].temperatures.reduce((a, b) => a + b, 0) /
-                  groupedData[day].temperatures.length
-              ),
+              getTemperature(groupedData[day].temperatures.reduce((a, b) => a + b, 0) / groupedData[day].temperatures.length),
               groupedData[day].icon,
               day === today
             )}

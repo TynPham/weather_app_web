@@ -1,7 +1,12 @@
 import React from "react";
+import { Navigate, Outlet } from "react-router-dom";
 
 const MainLayout = () => {
-  return <div>MainLayout</div>;
+  if (!localStorage.getItem("user")) {
+    return <Navigate to="/login" />;
+  }
+
+  return <Outlet />;
 };
 
 export default MainLayout;

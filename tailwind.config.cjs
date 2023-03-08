@@ -33,6 +33,7 @@ module.exports = {
         login: "#0171d3",
         loginHover: "##016dcb",
         fb: "#4267b2",
+        rgba: "rgba(0,0,0,0.4)",
       },
       minHeight: {
         430: "430px",

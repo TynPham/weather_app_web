@@ -1,29 +1,12 @@
 import React, { useState, useEffect } from "react";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { Spinner } from "../../icon";
 import weatherApi from "../../api/weatherApi";
 import { API_KEY } from "../../data";
 import { useSelector } from "react-redux";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-);
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 function ChartWeather() {
   const [hourlyData, setHourlyData] = useState([]);
@@ -48,9 +31,7 @@ function ChartWeather() {
           const response2 = await weatherApi.getTempAndPre(params);
           const hourlyData = response2.hourly;
           const today = new Date().toDateString();
-          const hourlyDataToday = hourlyData.filter(
-            (data) => new Date(data.dt * 1000).toDateString() === today
-          );
+          const hourlyDataToday = hourlyData.filter((data) => new Date(data.dt * 1000).toDateString() === today);
           setHourlyData(hourlyDataToday);
         }
       } catch (error) {
