@@ -3,7 +3,7 @@ import { IoNotificationsOutline } from "react-icons/io5";
 import { useSelector } from "react-redux";
 import { signOut } from "firebase/auth";
 import { auth } from "../../config/firebase";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const User = () => {
   const dataUser = useSelector((state) => state.user);
@@ -36,6 +36,9 @@ const User = () => {
           </button>
         )}
         <ul ref={listRef} className="p-4 bg-white text-black absolute top-[110%] right-0 z-10 rounded hidden">
+          <Link to="/user" className="block w-full cursor-pointer border-b">
+            User
+          </Link>
           <li onClick={handleSignOut} className="w-max cursor-pointer">
             Log Out
           </li>

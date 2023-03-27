@@ -18,6 +18,9 @@ const Search = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!country) {
+      return;
+    }
     const fetchData = async () => {
       try {
         const params = createParams(country);

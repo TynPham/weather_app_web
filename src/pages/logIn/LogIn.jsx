@@ -13,12 +13,12 @@ import GgAndFb from "./GgAndFb";
 import Field from "./Field";
 import { Spinner } from "../../icon/index";
 
-const schemaLogIn = yup.object({
+const schemaLogIn = yup.object().shape({
   email: yup.string().required("Email is a required field!").email("Email is not valid!"),
   password: yup.string().required("Password is a required field!").min(8, "Password must be at least 8 characters!"),
 });
 
-const schemaSignUp = yup.object({
+const schemaSignUp = yup.object().shape({
   email: yup.string().required("Email is a required field!").email("Email is not valid!"),
   password: yup.string().required("Password is a required field!").min(8, "Password must be at least 8 characters!"),
   confirmPassword: yup
@@ -31,49 +31,50 @@ const LogIn = () => {
   const [schema, setSchema] = useState(schemaLogIn);
   const [isLogInForm, setIsLogInForm] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPass, setConfirmPass] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [confirmPass, setConfirmPass] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const {
     handleSubmit,
     register,
+    setValue,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
   });
 
-  const handleSubmitForm = () => {
+  const handleSubmitForm = (data) => {
     if (isLogInForm) {
-      handleLogIn();
+      handleLogIn(data);
     } else {
-      handleSignUp();
+      handleSignUp(data);
     }
   };
 
-  const resetValue = () => {
-    setEmail("");
-    setPassword("");
-    setConfirmPass("");
-  };
+  // const resetValue = () => {
+  //   setEmail("");
+  //   setPassword("");
+  //   setConfirmPass("");
+  // };
 
   const handleSetLogInOrSignUp = () => {
     if (isLogInForm) {
       setSchema(schemaSignUp);
-      resetValue();
+      // resetValue();
     } else {
       setSchema(schemaLogIn);
-      resetValue();
+      // resetValue();
     }
     setIsLogInForm(!isLogInForm);
   };
 
-  const handleLogIn = async () => {
+  const handleLogIn = async (data) => {
     try {
       setIsLoading(true);
-      const result = await signInWithEmailAndPassword(auth, email, password);
+      const result = await signInWithEmailAndPassword(auth, data.email, data.password);
       if (result.user.emailVerified) {
         dispatch(setUserData(result.user.providerData[0]));
         localStorage.setItem("user", JSON.stringify(result.user.providerData[0]));
@@ -88,10 +89,10 @@ const LogIn = () => {
     }
   };
 
-  const handleSignUp = async () => {
+  const handleSignUp = async (data) => {
     try {
       setIsLoading(true);
-      const result = await createUserWithEmailAndPassword(auth, email, password);
+      const result = await createUserWithEmailAndPassword(auth, data.email, data.password);
       await sendEmailVerification(result.user);
       toast.info("Please verify the email in your email!");
       setIsLogInForm(true);
@@ -109,16 +110,16 @@ const LogIn = () => {
           <header className="text-3xl text-login text-center font-semibold">{isLogInForm ? "Login" : "Signup"}</header>
           <form onSubmit={handleSubmit(handleSubmitForm)}>
             <Field
-              name={email}
-              setName={setEmail}
+              name="email"
+              setValue={setValue}
               type="email"
               placeholder="Email"
               register={{ ...register("email") }}
               errorMessage={errors.email?.message}
             />
             <Field
-              name={password}
-              setName={setPassword}
+              name="password"
+              setValue={setValue}
               type="password"
               placeholder="Password"
               register={{ ...register("password") }}
@@ -126,8 +127,8 @@ const LogIn = () => {
             />
             {!isLogInForm && (
               <Field
-                name={confirmPass}
-                setName={setConfirmPass}
+                name="confirmPassword"
+                setValue={setValue}
                 type="password"
                 placeholder="Confirm password"
                 register={{ ...register("confirmPassword") }}

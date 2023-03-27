@@ -6,7 +6,8 @@ import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import ForgotPass from "./pages/logIn/ForgotPass";
 import LogIn from "./pages/logIn/LogIn";
-// lg:h-screen lg:px-28 lg:py-1 px-0 py-0
+import UserPage from "./pages/user/UserPage";
+
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +18,7 @@ function App() {
           </Route>
           <Route path="/logIn" element={<LogIn />} />
           <Route path="/forgot" element={<ForgotPass />} />
+          <Route path="/user" element={<UserPage />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
         <ToastContainer />
