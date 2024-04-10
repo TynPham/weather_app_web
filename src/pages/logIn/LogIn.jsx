@@ -44,6 +44,10 @@ const LogIn = () => {
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
+    defaultValues: {
+      email: "tuyenpham1104.dev@gmail.com",
+      password: "12345678",
+    },
   });
 
   const handleSubmitForm = (data) => {
@@ -63,6 +67,8 @@ const LogIn = () => {
   const handleSetLogInOrSignUp = () => {
     if (isLogInForm) {
       setSchema(schemaSignUp);
+      setValue("email", "");
+      setValue("password", "");
       // resetValue();
     } else {
       setSchema(schemaLogIn);
